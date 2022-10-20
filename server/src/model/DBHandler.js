@@ -27,13 +27,13 @@ const generateRandomWords = () => {
   const randomWords = [];
 
   // Pick the first element from each shuffled category and push it to the new array if it does not exist before
-  while (randomWords.length <= 10) {
+  while (randomWords.length < 10) {
     for (key in sortedWordList) {
       let randomElm = [...sortedWordList[key]].sort(
         () => 0.5 - Math.random()
       )[0];
 
-      if (!randomWords.includes(randomElm)) {
+      if (!randomWords.includes(randomElm) && randomWords.length < 10) {
         randomWords.push(randomElm);
       }
     }

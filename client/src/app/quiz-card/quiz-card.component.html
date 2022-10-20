@@ -1,0 +1,27 @@
+<section class="quizCard">
+  <div *ngIf="!finelRank">
+    <h1 class="question">Can you guess the word's Part Of Speech?</h1>
+    <h2 class="word" *ngIf="currentWord">
+      {{ currentWord.word }}
+    </h2>
+
+    <div class="options">
+      <button
+        *ngFor="let option of options; let currentIndex = index"
+        [value]="option"
+        (click)="getNextWord(option)"
+      >
+        {{ option }}
+      </button>
+    </div>
+    <progress [value]="currenntIndex" max="10">
+      {{ currenntIndex * 10 }}
+    </progress>
+    <span class="question-number">
+      {{ currenntIndex }} / {{ words && words.length }}
+    </span>
+  </div>
+  <div *ngIf="finelRank">
+    <h1>Your Rank is Better than {{ finelRank }}</h1>
+  </div>
+</section>

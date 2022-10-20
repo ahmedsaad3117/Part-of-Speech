@@ -6,7 +6,9 @@ const router = express.Router();
 
 router.get("/words", (req, resp) => {
   try {
-    resp.json(arrayShuffling(generateRandomWords()));
+    resp.json({data: arrayShuffling(generateRandomWords()),
+    message: "Scuess!"
+    });
   } catch (e) {
     resp.status(500).send();
   }
