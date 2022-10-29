@@ -1,4 +1,3 @@
-# Twerlo Task for Javascript Developer. 
 
 ## Description
 
